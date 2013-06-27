@@ -30,11 +30,11 @@
   "devDependencies": {
     "grunt": ">=0.4.1",
     "grunt-contrib-qunit": ">=0.2.0",
-    "grunt-qunit-junit": ">=0.1.0-alpha",
+    "grunt-qunit-junit": "0.1.0-alpha2",
     "grunt-contrib-clean": ">=0.4.0",
     "grunt-contrib-jshint": ">=0.3.0",
-    "grunt-contrib-csslint": ">=0.1.1",
+    "grunt-contrib-csslint": "~0.1.2",
     "grunt-contrib-requirejs": ">=0.4.0",
-    "grunt-contrib-connect": ">=0.2.0"
+    "grunt-contrib-connect": "~0.3.0"
   }
 }
