@@ -1,0 +1,1 @@
+{"version":3,"file":"inheritance.uglify2.js","sources":["src/inheritance.js"],"names":[],"mappings":"AAEA,OAAA,iBAAA,WAEA,MAAA","sourcesContent":["\n/*! inheritance/inheritance */\ndefine('inheritance',[], function() {\n\n  return null;\n\n});\n"]}

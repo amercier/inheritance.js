@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "/mnt/hgfs/Documents/inheritance.js/inheritance.uncompressed.js",
+  "sources": [
+    "src/inheritance.js"
+  ],
+  "names": [],
+  "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA",
+  "sourcesContent": [
+    "\n/*! inheritance/inheritance */\ndefine('inheritance',[], function() {\n\n  return null;\n\n});\n"
+  ]
+}

@@ -8,6 +8,17 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // Clean
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    clean: {
+      package: [
+          './inheritance.*.js',
+          './inheritance.*.map'
+        ]
+    },
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // Lint
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -89,12 +100,37 @@ module.exports = function(grunt) {
     // grunt-contrib-requirejs
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     requirejs: {
-      compile: {
+      options: {
+        baseUrl: 'src',
+        name: 'inheritance',
+        generateSourceMaps: true
+        //mainConfigFile: 'path/to/config.js',
+      },
+      uncompressed: {
         options: {
-          baseUrl: 'src',
-          name: 'inheritance',
-          //mainConfigFile: 'path/to/config.js',
-          out: 'inheritance.js'
+          optimize: 'none',
+          out: 'inheritance.uncompressed.js'
+        }
+      },
+      uglify: {
+        options: {
+          optimize: 'uglify',
+          out: 'inheritance.uglify.js',
+          generateSourceMaps: false // "uglify" does not support generateSourceMaps
+        }
+      },
+      uglify2: {
+        options: {
+          optimize: 'uglify2',
+          out: 'inheritance.uglify2.js',
+          preserveLicenseComments: false // Cannot use preserveLicenseComments and generateSourceMaps together
+        }
+      },
+      closure: {
+        options: {
+          optimize: 'closure',
+          out: 'inheritance.closure.js',
+          preserveLicenseComments: false // Cannot use preserveLicenseComments and generateSourceMaps together
         }
       }
     }
@@ -105,6 +141,16 @@ module.exports = function(grunt) {
   // Tasks
   // ---------------------------------------------------------------------------
 
+
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  // Clean
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  grunt.loadNpmTasks('grunt-contrib-clean');
+
+  grunt.registerTask('clean-all', [
+      'clean:package'
+    ]);
 
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   // Lint
@@ -155,7 +201,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   grunt.registerTask('package', [
-      'requirejs'
+      'requirejs:uncompressed',
+      'requirejs:uglify',
+      'requirejs:uglify2'//,
+      //'requirejs:closure    // Only available if running the optimizer using Java.
     ]);
 
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -163,6 +212,7 @@ module.exports = function(grunt) {
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
   grunt.registerTask('default', [
+      'clean-all',
       'lint-src',
       'test',
       'package',
