@@ -1,0 +1,8 @@
+@startuml
+
+abstract Class Chart {
+  + addXAxis (object options)
+  + addYAxis (object options)
+}
+
+@enduml
