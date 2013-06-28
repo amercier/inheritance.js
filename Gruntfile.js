@@ -64,15 +64,16 @@ module.exports = function(grunt) {
 
     // grunt-contrib-connect
     connect: {
-      test: {
+      all: {
         options: {
-          hostname: '0.0.0.0',
-          keepalive: false
+          hostname: '*'
         }
+      },
+      test: {
       },
       server: {
         options: {
-          hostname: '0.0.0.0',
+          hostname: '*',
           keepalive: true
         }
       }
@@ -80,10 +81,19 @@ module.exports = function(grunt) {
 
     // grunt-contrib-qunit
     qunit: {
-      all: {
+      src: {
         options: {
           urls: [
-            'http://localhost:8000/test/inheritance.html'
+            'http://localhost:8000/test/inheritance-src.html'
+          ]
+        }
+      },
+      dist: {
+        options: {
+          urls: [
+            'http://localhost:8000/test/inheritance-dist-uncompressed.html',
+            'http://localhost:8000/test/inheritance-dist-uglify.html',
+            'http://localhost:8000/test/inheritance-dist-uglify2.html'
           ]
         }
       }
@@ -178,12 +188,16 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-qunit-junit');
 
-  grunt.registerTask('test', [
-      //'clean',
-      //'lint-src',
+  grunt.registerTask('test-src', [
       'connect:test',
       //'qunit_junit',
-      'qunit'
+      'qunit:src'
+    ]);
+
+  grunt.registerTask('test-dist', [
+      //'connect:test',
+      //'qunit_junit',
+      'qunit:dist'
     ]);
 
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -214,9 +228,10 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
       'clean-all',
       'lint-src',
-      'test',
+      'test-src',
       'package',
-      'lint-dist'
+      'lint-dist',
+      'test-dist'
     ]);
 
 };
