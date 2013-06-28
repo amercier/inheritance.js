@@ -201,7 +201,10 @@ module.exports = function(grunt) {
     ]);
 
   grunt.registerTask('test', [
-      'test-src'
+      'lint-src',
+      'test-src',
+      'lint-dist',
+      'test-dist'
     ]);
 
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
