@@ -200,6 +200,10 @@ module.exports = function(grunt) {
       'qunit:dist'
     ]);
 
+  grunt.registerTask('test', [
+      'test-src'
+    ]);
+
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   // Server
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
