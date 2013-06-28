@@ -170,14 +170,10 @@ module.exports = function(grunt) {
   // grunt.loadNpmTasks('grunt-html');
   grunt.loadNpmTasks('grunt-contrib-csslint');
 
-  grunt.registerTask('lint-src', [ // Source files
+  grunt.registerTask('lint', [ // Source files
       'jshint:src',
       // 'htmllint:src'
       'csslint:src'
-    ]);
-  grunt.registerTask('lint-dist', [ // Packaged files
-      'jshint:dist',
-      'csslint:dist'
     ]);
 
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -201,9 +197,8 @@ module.exports = function(grunt) {
     ]);
 
   grunt.registerTask('test', [
-      'lint-src',
+      'lint',
       'test-src',
-      'lint-dist',
       'test-dist'
     ]);
 
@@ -234,10 +229,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
       'clean-all',
-      'lint-src',
+      'lint',
       'test-src',
       'package',
-      'lint-dist',
       'test-dist'
     ]);
 
