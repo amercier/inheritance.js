@@ -1,6 +1,11 @@
 /*! inheritance/inheritance */
-define([], function() {
+define([
+    './inherit'
+  ], function(inherit) {
 
-  return null;
+    return {
+      inherit: inherit
+    };
 
-});
+  }
+);
