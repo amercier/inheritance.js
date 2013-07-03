@@ -91,9 +91,9 @@ module.exports = function(grunt) {
       dist: {
         options: {
           urls: [
-            'http://localhost:8000/test/inheritance-dist-uncompressed.html',
+            'http://localhost:8000/test/inheritance-dist-uncompressed.html'/*,
             'http://localhost:8000/test/inheritance-dist-uglify.html',
-            'http://localhost:8000/test/inheritance-dist-uglify2.html'
+            'http://localhost:8000/test/inheritance-dist-uglify2.html'*/
           ]
         }
       }
@@ -109,13 +109,18 @@ module.exports = function(grunt) {
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // grunt-contrib-requirejs
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     requirejs: {
+
       options: {
         baseUrl: 'src',
         name: 'inheritance',
+        onBuildWrite: function (moduleName, path, contents) {
+          return contents.replace(/define\('/, 'define(\'inheritance/');
+        },
         generateSourceMaps: true
-        //mainConfigFile: 'path/to/config.js',
       },
+
       uncompressed: {
         options: {
           optimize: 'none',
@@ -138,9 +143,8 @@ module.exports = function(grunt) {
       },
       closure: {
         options: {
-          optimize: 'closure',
-          out: 'inheritance.closure.js',
-          preserveLicenseComments: false // Cannot use preserveLicenseComments and generateSourceMaps together
+          optimize: 'none', // Will be optimized later
+          out: 'inheritance.closure.js'
         }
       }
     }

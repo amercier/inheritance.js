@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Inheritance.js test suite (sources)</title>
+  <title>Inheritance.js test suite (uncompressed)</title>
 
   <!-- RequireJS -->
   <script src="../lib/requirejs/require.js"></script>
@@ -13,33 +13,33 @@
 </head>
 
 <body>
-    <div id="qunit"></div>
-    <div id="qunit-fixture"></div>
-    <script>
-      QUnit.config.autostart = false;
-      QUnit.config.reorder = false;
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script>
+    QUnit.config.autostart = false;
+    QUnit.config.reorder = false;
 
-      var title = document.title;
-      require.debug && console.log('Started running ' + title);
+    var title = document.title;
+    require.debug && console.log('Started running ' + title);
 
-      require(['./requirejs-config-dist-uncompressed'], function() {
+    require(['../inheritance.uncompressed', './requirejs-config'], function() {
 
-        require(['tests/inheritance/suite'/*, 'tests/debug'*/], function() {
-          QUnit.load();
-          QUnit.start();
-          require.debug && console.log('Finished running ' + title);
-          module = function(name) {
-            throw new Error('Can\'t use module("' + name + '") outside test suite (causes PhantomJS incompatibility). This can be caused by a wrongly written test case (require instead of define).');
-          }
-          test = function(name) {
-            throw new Error('Can\'t use test("' + name + '") outside test suite (causes PhantomJS incompatibility). This can be caused by a wrongly written test case (require instead of define).');
-          }
-          asyncTest = function(name) {
-            throw new Error('Can\'t use asyncTest("' + name + '") outside test suite (causes PhantomJS incompatibility). This can be caused by a wrongly written test case (require instead of define).');
-          }
+      require(['tests/inheritance/suite'/*, 'tests/debug'*/], function() {
+        QUnit.load();
+        QUnit.start();
+        require.debug && console.log('Finished running ' + title);
+        module = function(name) {
+          throw new Error('Can\'t use module("' + name + '") outside test suite (causes PhantomJS incompatibility). This can be caused by a wrongly written test case (require instead of define).');
+        }
+        test = function(name) {
+          throw new Error('Can\'t use test("' + name + '") outside test suite (causes PhantomJS incompatibility). This can be caused by a wrongly written test case (require instead of define).');
+        }
+        asyncTest = function(name) {
+          throw new Error('Can\'t use asyncTest("' + name + '") outside test suite (causes PhantomJS incompatibility). This can be caused by a wrongly written test case (require instead of define).');
+        }
 
-        }, function(err) { QUnit.load(); QUnit.start(); err.message = err.stack; throw err; });
-      });
-    </script>
+      }, function(err) { QUnit.load(); QUnit.start(); err.message = err.stack; throw err; });
+    });
+  </script>
 </body>
 </html>

@@ -1,2 +1,2 @@
-define("inheritance",[],function(){return null});
+define("inheritance/inherit",[],function(){function n(){}return function(r,t){if(r===t)throw new Error("A function cannot inherit from itself");if("parent"in r)throw new Error(r.name+" inherit already from "+r.parent.name);return t&&(n.prototype=t.prototype,r.prototype=new n,r.prototype.constructor=r,r.parent=t),null}}),define("inheritance/inheritance",["./inherit"],function(n){return{inherit:n}});
 //@ sourceMappingURL=inheritance.uglify2.js.map

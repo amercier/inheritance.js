@@ -4,8 +4,8 @@
 requirejs.config({
   baseUrl : '../lib',
   paths: {
-    tests      : '../test',
-    'inheritance/inheritance': './inheritance.uglify2'
+    tests: '../test',
+    inheritance: '../src'
   }
 });
 
