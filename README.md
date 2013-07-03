@@ -1,6 +1,8 @@
 inheritance.js
 ==============
 
+[![Build Status](https://travis-ci.org/amercier/inheritance.js.png?branch=master)](https://travis-ci.org/amercier/inheritance.js)
+
 A pure-JavaScript Inheritance library designed to be easily dropped in to a host
 library
 
