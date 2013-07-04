@@ -6,10 +6,10 @@ inheritance.js
 A pure-JavaScript Inheritance library designed to be easily dropped in to a host
 library
 
-- [x] Pure Javascript (framework-agnostic)
-- [x] Developer-friendly (enforce usage of native JavaScript functions)
-- [x] No globals, no native functions enhancements
-- [x] Open Source (licenced under CC-BY)
+✔ Pure Javascript (framework-agnostic)  
+✔ Developer-friendly (enforce usage of native JavaScript functions)  
+✔ No globals, no native functions enhancements  
+✔ Open Source (licenced under CC-BY)  
 
 
 inheritance/inherit
@@ -68,12 +68,12 @@ Multiple inheritance through mixins:
 Compatibility
 -------------
 
-- [x] Google Chrome
-- [x] Mozilla Firefox 3.6+
-- [ ] Internet Explorer 6 (untested)
-- [ ] Internet Explorer 7 (untested)
-- [x] Internet Explorer 8+
-- [ ] Opera (untested)
+✔ Google Chrome  
+✔ Mozilla Firefox 3.6+  
+✘ Internet Explorer 6 (untested)  
+✘ Internet Explorer 7 (untested)  
+✔ Internet Explorer 8+  
+✘ Opera (untested)  
 
 
 License
