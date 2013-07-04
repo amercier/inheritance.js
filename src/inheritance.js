@@ -1,6 +1,7 @@
 /*! inheritance/inheritance */
 define([
-    './inherit'
+    './inherit',
+    './implement'
   ], function(inherit) {
 
     return {
