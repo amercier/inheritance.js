@@ -31,3 +31,30 @@ Simple Javascript inheritance:
     new Animal() instanceof Organism; // true
     new Animal().isAlive(); // true
     Animal.parent; // Organism
+
+inheritance/implement
+---------------------
+
+Multiple inheritance through mixins:
+
+    function Animal() {
+    }
+
+    // Carnivore mixin
+    function Carnivore() {
+      function eatFlesh(flesh) {
+        console.log ('Blurp!');
+      }
+    }
+
+    function HumanBeing() {
+    }
+    inherit(HumanBeing, Animal);
+    implement(HumanBeing, Carnivore);
+
+    // ---
+
+    new HumanBeing() instanceof HumanBeing; // true
+    new HumanBeing() instanceof Animal; // true
+    HumanBeing.parent; // Animal
+    new HumanBeing().eatFlesh({...}); // 'Blurp!'
