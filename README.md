@@ -6,6 +6,11 @@ inheritance.js
 A pure-JavaScript Inheritance library designed to be easily dropped in to a host
 library
 
+- [x] Pure Javascript (framework-agnostic)
+- [x] Developer-friendly (enforce usage of native JavaScript functions)
+- [x] No globals, no native functions enhancements
+- [x] Open Source (licenced under CC-BY)
+
 
 inheritance/inherit
 -------------------
