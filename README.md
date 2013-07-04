@@ -58,3 +58,12 @@ Multiple inheritance through mixins:
     new HumanBeing() instanceof Animal; // true
     HumanBeing.parent; // Animal
     new HumanBeing().eatFlesh({...}); // 'Blurp!'
+
+
+License
+-------
+
+This project is released under [Creative Commons - Attribution 3.0 Unported](LICENSE-CC-BY.md)
+license. If this license does not fit your requirement for whatever reason, but
+you would be interested in using the work (as defined below) under another
+license, please contact Alexandre Mercier at pro.alexandre.mercier@gmail.com .
