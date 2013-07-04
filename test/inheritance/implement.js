@@ -32,8 +32,8 @@ define(['inheritance/implement'], function(implement) {
 
   var smokey = new Cat(); // Smokey the Purring Cat
   var chuckNorris = new HumanBeing(); // Almost not :p
-  console.log('smokey', smokey);
-  console.log('chuckNorris', chuckNorris);
+  // console.log('smokey', smokey);
+  // console.log('chuckNorris', chuckNorris);
 
   test('parent', function() {
 
@@ -79,24 +79,6 @@ define(['inheritance/implement'], function(implement) {
     ok('alive' in smokey, '"alive" in smokey');
     ok('alive' in chuckNorris, '"alive" in chuckNorris');
 
-  });
-
-  test('function name', function() {
-
-    strictEqual(Organism.name, 'Organism', 'Organism.name === "Organism"');
-    strictEqual(Animal.name, 'Animal', 'Animal.name === "Animal"');
-    strictEqual(Mammal.name, 'Mammal', 'Mammal.name === "Mammal"');
-    strictEqual(Cat.name, 'Cat', 'Cat.name === "Cat"');
-    strictEqual(HumanBeing.name, 'HumanBeing', 'HumanBeing.name === "HumanBeing"');
-
-    strictEqual(smokey.constructor.name     , 'Cat'       , 'Cat');
-    strictEqual(chuckNorris.constructor.name, 'HumanBeing', 'HumanBeing');
-
-    strictEqual(smokey.toString(), '[object Object]', 'Object.prototype.toString.apply(smokey) === "[object Object]"');
-    strictEqual(chuckNorris.toString(), '[object Object]', 'Object.prototype.toString.apply(chuckNorris) === "[object Object]"');
-
-    strictEqual(Object.prototype.toString.apply(smokey), '[object Object]', 'Object.prototype.toString.apply(smokey) === "[object Object]"');
-    strictEqual(Object.prototype.toString.apply(chuckNorris), '[object Object]', 'Object.prototype.toString.apply(chuckNorris) === "[object Object]"');
   });
 
 });
