@@ -83,3 +83,18 @@ This project is released under [Creative Commons - Attribution 3.0 Unported](LIC
 license. If this license does not fit your requirement for whatever reason, but
 you would be interested in using the work (as defined below) under another
 license, please contact Alexandre Mercier at pro.alexandre.mercier@gmail.com .
+
+
+Contributing
+------------
+
+Contributions (issues ♥, pull requests ♥♥♥) are more than welcome! Feel free to
+clone, fork, modify, extend, etc, as long as you respect the [license terms](LICENSE-CC-BY.md).
+
+**Installation**: after cloning the project, all you need to to is execute
+`npm install && bower install`.
+
+**Testing**: `grunt test`
+
+**Committing**: before committing any JavaScript code, you need to execute
+`grunt package` in order to generate compiled packages.
