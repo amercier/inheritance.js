@@ -65,6 +65,17 @@ Multiple inheritance through mixins:
     new HumanBeing().eatFlesh({...}); // 'Blurp!'
 
 
+Compatibility
+-------------
+
+- [x] Google Chrome
+- [x] Mozilla Firefox 3.6+
+- [ ] Internet Explorer 6 (untested)
+- [ ] Internet Explorer 7 (untested)
+- [x] Internet Explorer 8+
+- [ ] Opera (untested)
+
+
 License
 -------
 
