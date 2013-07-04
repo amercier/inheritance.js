@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AMD Map</title>
+
+  <!-- RequireJS -->
+  <script src="../lib/requirejs/require.js"></script>
+
+</head>
+
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script>
+    require(['./requirejs-config'], function() {
+      requirejs.onResourceLoad = function (context, map, depArray) {
+        console.log( (map.parentMap ? map.parentMap.id + ' <-- ' : '') + map.id);
+      };
+
+      console.log('@startuml');
+      require(['inheritance/inheritance'], function() {
+        console.log('@enduml');
+      });
+    });
+  </script>
+</body>
+</html>
