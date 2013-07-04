@@ -12,6 +12,12 @@ library
 ✔ [Tested](test/)  
 
 
+Installation
+------------
+
+    bower install inheritance
+
+
 inheritance/inherit
 -------------------
 
