@@ -76,8 +76,8 @@ Compatibility
 ✘ Opera (untested)  
 
 
-License
--------
+Licensing
+---------
 
 This project is released under [Creative Commons - Attribution 3.0 Unported](LICENSE-CC-BY.md)
 license. If this license does not fit your requirement for whatever reason, but
