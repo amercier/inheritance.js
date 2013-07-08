@@ -1,9 +1,9 @@
 @startuml
 
+Organism <|-- Animal
+
 class Organism {
   + alive: boolean
 }
-
-Organism <|-- Animal
 
 @enduml
