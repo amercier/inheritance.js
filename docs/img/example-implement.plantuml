@@ -1,13 +1,13 @@
 @startuml
 
 class Animal {
-  + alive: boolean
 }
 
 abstract class Carnivore {
 	+ eatFlesh(flesh)
 }
 
-Animal <|-- Organism
+HumanBeing <|-- Animal
+HumanBeing <|.. Carnivore
 
 @enduml
