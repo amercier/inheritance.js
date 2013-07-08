@@ -7,7 +7,7 @@ abstract class Carnivore {
 	+ eatFlesh(flesh)
 }
 
-HumanBeing --|> Animal
-HumanBeing ..|> Carnivore
+Animal <|.. HumanBeing
+Carnivore <|.. HumanBeing
 
 @enduml
