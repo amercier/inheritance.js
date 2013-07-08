@@ -9,7 +9,7 @@ library
 ✔ Pure Javascript (framework-agnostic)  
 ✔ Developer-friendly (enforce usage of native JavaScript functions)  
 ✔ No globals, no native functions enhancements  
-✔ [Tested](test/)  
+✔ [Tested](https://travis-ci.org/amercier/inheritance.js/builds)  
 
 
 Installation
