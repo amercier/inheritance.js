@@ -91,9 +91,9 @@ module.exports = function(grunt) {
       dist: {
         options: {
           urls: [
-            'http://localhost:8000/test/inheritance-dist-uncompressed.html'/*,
+            'http://localhost:8000/test/inheritance-dist-uncompressed.html',
             'http://localhost:8000/test/inheritance-dist-uglify.html',
-            'http://localhost:8000/test/inheritance-dist-uglify2.html'*/
+            'http://localhost:8000/test/inheritance-dist-uglify2.html'
           ]
         }
       }
