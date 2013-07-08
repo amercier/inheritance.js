@@ -147,6 +147,17 @@ module.exports = function(grunt) {
           out: 'inheritance.closure.js'
         }
       }
+    },
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // Doc
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    exec: {
+      'docs': {
+        cwd: './docs/',
+        command: 'make'
+      }
     }
 
   });
@@ -227,6 +238,16 @@ module.exports = function(grunt) {
       //'requirejs:closure    // Only available if running the optimizer using Java.
     ]);
 
+  grunt.loadNpmTasks('grunt-exec');
+
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  // Doc
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  grunt.registerTask('docs', [
+      'exec:docs'
+    ]);
+
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   // Default
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -236,7 +257,8 @@ module.exports = function(grunt) {
       'lint',
       'test-src',
       'package',
-      'test-dist'
+      'test-dist',
+      'docs'
     ]);
 
 };

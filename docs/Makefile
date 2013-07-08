@@ -37,15 +37,19 @@ SKINPARAMS := \
 	-ScomponentArrowColor=\#000000 \
 	-ScomponentArrowFontColor=\#000000
 
-all: lib/plantuml.jar \
-	img/modules.svg
+all: lib/plantuml.jar
+	ls img/*.plantuml | while read filename; do echo "---------- $${filename/.plantuml/.svg} ----------"; make "$${filename/.plantuml/.svg}"; done
+	#
 	# Generated UML diagrams successfully
 
 clean:
 	rm -f img/*.svg
 
-lib/plantuml.jar:
-	wget -O lib/plantuml.jar http://heanet.dl.sourceforge.net/project/plantuml/plantuml.jar
+lib/plantuml.jar: lib
+	wget --no-verbose -O lib/plantuml.jar http://heanet.dl.sourceforge.net/project/plantuml/plantuml.jar
+
+lib:
+	mkdir lib
 
 img/%.svg: img/%.plantuml
 	java -jar lib/plantuml.jar -tsvg $(SKINPARAMS) $^ && sed -i -e 's/<svg/<svg font-family="Helvetica"/' $@

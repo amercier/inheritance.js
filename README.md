@@ -23,6 +23,8 @@ inheritance/inherit
 
 Simple Javascript inheritance:
 
+![Simple Javascript inheritance using inheritance/inherit](/docs/img/example-inherit.svg)
+
     function Organism() {
       this.alive = true;
     }
@@ -47,6 +49,8 @@ inheritance/implement
 ---------------------
 
 Multiple inheritance through mixins:
+
+![Multiple Javascript inheritance using inheritance/inherit](/docs/img/example-implement.svg)
 
     function Animal() {
     }
