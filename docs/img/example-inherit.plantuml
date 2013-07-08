@@ -4,6 +4,6 @@ class Organism {
   + alive: boolean
 }
 
-Animal <|-- Organism
+Animal --|> Organism
 
 @enduml
