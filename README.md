@@ -18,39 +18,50 @@ Installation
     bower install inheritance
 
 
-inheritance/inherit
--------------------
+
+Prototypal inheritance
+----------------------
+
+### inheritance/prototypal/inherit ###
 
 Simple Javascript inheritance:
 
-![Simple Javascript inheritance using inheritance/inherit](docs/img/example-inherit.png)
+![Simple Javascript inheritance using inheritance/prototypal/inherit](docs/img/example-inherit.png)
 
-    function Organism() {
-      this.alive = true;
-    }
+```javascript
+require('inheritance/prototypal/inherit', function(inherit) {
+  
+  function Organism() {
+    this.alive = true;
+  }
 
-    Organism.prototype.isAlive = function() {
-      return this.alive;
-    };
+  Organism.prototype.isAlive = function() {
+    return this.alive;
+  };
 
-    function Animal() {
-      Animal.parent.apply(this, arguments);
-    }
-    inherit(Animal, Organism);
+  function Animal() {
+    Animal.parent.apply(this, arguments);
+  }
+  inherit(Animal, Organism);
 
-    // ---
+  // ---
 
-    new Animal() instanceof Animal; // true
-    new Animal() instanceof Organism; // true
-    new Animal().isAlive(); // true
-    Animal.parent; // Organism
+  new Animal() instanceof Animal; // true
+  new Animal() instanceof Organism; // true
+  new Animal().isAlive(); // true
+  Animal.parent; // Organism
 
-inheritance/implement
----------------------
+});
+```
+
+### inheritance/prototypal/implement ###
 
 Multiple inheritance through mixins:
 
-![Multiple Javascript inheritance using inheritance/inherit](docs/img/example-implement.png)
+![Multiple Javascript inheritance using inheritance/prototypal/inherit](docs/img/example-implement.png)
+
+```javascript
+require(['inheritance/prototypal/inherit', 'inheritance/prototypal/implement'], function(inherit, implement) {
 
     function Animal() {
     }
@@ -73,6 +84,15 @@ Multiple inheritance through mixins:
     new HumanBeing() instanceof Animal; // true
     HumanBeing.parent; // Animal
     new HumanBeing().eatFlesh({...}); // 'Blurp!'
+
+  }
+);
+```
+
+Object inheritance
+------------------
+
+
 
 
 Compatibility

@@ -1,6 +1,6 @@
-define(['inheritance/inherit'], function(inherit) {
+define(['inheritance/prototypal/inherit'], function(inherit) {
 
-  module('inheritance/inherit');
+  module('inheritance/prototypal/inherit');
 
   function Organism() {
     this.alive = true;

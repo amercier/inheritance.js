@@ -213,6 +213,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', [
       'lint',
+      'package',
       'test-src',
       'test-dist'
     ]);

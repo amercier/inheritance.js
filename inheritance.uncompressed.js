@@ -36,7 +36,7 @@
  *
  * @author Alexandre Mercier <pro.alexandre.mercier@gmail.com>
  */
-define('inheritance/inherit',[], function() {
+define('inheritance/prototypal/inherit',[], function() {
 
   function __() {} // see inherhit()
 
@@ -72,7 +72,7 @@ define('inheritance/inherit',[], function() {
 });
 
 /*! inheritance/implement */
-define('inheritance/implement',[], function() {
+define('inheritance/prototypal/implement',[], function() {
 
   return function implement (childFunction, parentFunction) {
 
@@ -99,8 +99,8 @@ define('inheritance/implement',[], function() {
 
 /*! inheritance/inheritance */
 define('inheritance/inheritance',[
-    './inherit',
-    './implement'
+    './prototypal/inherit',
+    './prototypal/implement'
   ], function(inherit) {
 
     return {
