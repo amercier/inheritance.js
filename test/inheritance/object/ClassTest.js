@@ -416,7 +416,6 @@ define(['inheritance/object/Class'], function(Class) {
     }
 
     ok(exploded, 'The exploding ninja should explose in init()');
-    console.log(error.stack);
     ok(/\/test\/inheritance\/object\/ClassTest\.js/.test(error.stack), 'Stack trace contains "/test/inheritance/object/ClassTest.js"');
 
   });
