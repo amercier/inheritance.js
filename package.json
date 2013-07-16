@@ -1,7 +1,7 @@
 {
   "name": "inheritance.js",
   "description": "A pure-JavaScript Inheritance library designed to be easily dropped in to a host library",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/amercier/inheritance.js",
   "author": {
     "name": "Alexandre Mercier",
